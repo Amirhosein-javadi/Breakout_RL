@@ -14,3 +14,17 @@ We now need to build a neural network that can map images to state q-values. You
 
 # Target Networks
 DQN is basically a policy iteration method in which we both approximate the  values and improve them as we go. This might cause any errors in estimating to propagate and create unwanted difficulties. To address this issue we use **Target Networks**. Recall the main Q-Learning framework:
+
+<img src="figs/targetNetworks.jpg" width="300" height="25">
+
+In this framework we approximate the  Q^(s,a′;Θ′)  values using a network parameterized by  Θ′  and this is the actual target network. After certain frequencies we load the current network into the target network.
+
+Here we will finally implement the Q-Learning procedure. Here's the process:
+
+Compute Q-learning TD error with Q-reference defined as :
+
+<img src="figs/Q-error.jpg" width="300" height="110">
+
+# Final Result
+ 
+ ![](DQN_BreakoutNoFrameskip-v4.gif)
